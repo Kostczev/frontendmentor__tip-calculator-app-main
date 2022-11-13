@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+   <div class="wrapper ">
+      <div class="title">
+         <p>SPLI</p>
+         <p>TTER</p>
+      </div>
+      <div class="tip-calc">
+         <div class="tip-calc__parameters">
+            <div class="tip-calc__title">Bill</div>
+            <div class="tip-calc__input-with-img margin-bottom-first-input">
+               <img src="./images/icon-dollar.svg" alt="">
+               <input type="number" placeholder=0 class="tip-calc__input  tip-calc__bill">
+            </div>
+            
+            <div class="tip-calc__title">Select Tip %</div>
+            <div class="tip-calc__precents">
+               <button class="tip-calc__precent">5%</button>
+               <button class="tip-calc__precent">10%</button>
+               <button class="tip-calc__precent">15%</button>
+               <button class="tip-calc__precent">25%</button>
+               <button class="tip-calc__precent">50%</button>
+               <input type="number" class="tip-calc__input tip-calc__precent" placeholder="Custom">
+            </div>
+
+            <div class="tip-calc__two-column">
+               <div class="tip-calc__title">Number of People</div>
+               <div class="tip-calc__error-title">Can't be zero</div>
+            </div>
+            <div class="tip-calc__input-with-img margin-bottom-third-input">
+               <img src="./images/icon-person.svg" alt="">
+               <input type="number" placeholder=0  class="tip-calc__input tip-calc__person">
+            </div>
+         </div>
+
+         <div class="tip-calc__output">
+            <div class="tip-calc__two-column first">
+               <div class="tip-calc__output-titles">
+                  <div class="tip-calc__output-title">Tip Amount</div>
+                  <div class="tip-calc__output-small-text">/ person</div>
+               </div>
+               <div class="tip-calc__output-money tip-amount">$0.00</div>
+            </div>
+
+            <div class="tip-calc__two-column second">
+               <div class="tip-calc__output-titles">
+                  <div class="tip-calc__output-title">Total</div>
+                  <div class="tip-calc__output-small-text">/ person</div>
+               </div>
+               <div class="tip-calc__output-money total">$0.00</div>
+            </div>
+            <button class="tip-calc__reset third inactive">Reset</button>
+
+         </div>
+      </div>
+
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Churczev Konstantin</a>.
+      </div>
+   </div>
+  
+  <script src="./js/script.js"></script>
+</body>
+</html>

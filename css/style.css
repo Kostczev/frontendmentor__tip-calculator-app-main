@@ -1,0 +1,302 @@
+@charset "UTF-8";
+/*отступы*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/*перещет области*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*отключение обводки*/
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+/*делаем блочными некоторые теги*/
+nav, footer, header, aside {
+  display: block;
+}
+
+/*Уравниваем поведение шрифтов и тд для разных браузеров (также запрещает самовольное увеличени шрифтов (айфон))*/
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/*Говоорим тегам наследовать семейство шрифта*/
+input, button, textarea {
+  font-family: inherit;
+  display: block;
+}
+
+/*еще куча фич, таких как отклчение крестиков и отступов в разных браузерах*/
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+/*Обнуляем все заголовки*/
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+body {
+  background: hsl(185deg, 41%, 84%);
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 16px;
+  color: hsl(186deg, 14%, 43%);
+}
+
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template: 1fr auto 1fr auto 1fr auto/1fr;
+}
+
+.title {
+  text-align: center;
+  grid-row: 2;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+.margin-bottom-first-input {
+  margin-bottom: 35px;
+}
+
+.margin-bottom-third-input {
+  margin-bottom: 24px;
+}
+
+.tip-calc {
+  grid-row: 4;
+  background: hsl(0deg, 0%, 100%);
+  border-radius: 20px;
+  padding: 24px;
+  gap: 32px;
+  box-shadow: 0 10px 20px 0 #afd8da;
+}
+.tip-calc__parameters {
+  padding: 8px;
+}
+.tip-calc__title {
+  margin-bottom: 10px;
+}
+.tip-calc__input {
+  transition: 0.3s;
+  transition-property: border-color;
+  background: hsl(189deg, 41%, 97%);
+  border: 3px solid hsl(189deg, 41%, 97%);
+  width: 100%;
+  padding: 7px 12px;
+  border-radius: 5px;
+  text-align: right;
+  color: hsl(183deg, 100%, 15%);
+  font-size: 24px;
+  font-weight: 700;
+}
+.tip-calc__input::-moz-placeholder {
+  color: hsl(184deg, 14%, 56%);
+}
+.tip-calc__input:-ms-input-placeholder {
+  color: hsl(184deg, 14%, 56%);
+}
+.tip-calc__input::placeholder {
+  color: hsl(184deg, 14%, 56%);
+}
+.tip-calc__input:hover {
+  border: 3px solid hsl(172deg, 67%, 45%);
+}
+.tip-calc__input:focus {
+  border: 3px solid hsl(172deg, 67%, 45%);
+}
+.tip-calc__input.error {
+  border: 3px solid #cf7968;
+}
+.tip-calc__error-title {
+  transition: 0.3s;
+  transition-property: opacity;
+  opacity: 0;
+  color: #cf7968;
+}
+.tip-calc__error-title.active {
+  opacity: 1;
+}
+.tip-calc__input-with-img {
+  position: relative;
+}
+.tip-calc__input-with-img img {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  top: 20px;
+  height: 18px;
+}
+.tip-calc__precents {
+  display: grid;
+  grid-template: 1fr 1fr 1fr/1fr 1fr;
+  gap: 16px;
+  margin: 20px 0 35px 0;
+}
+.tip-calc__precents button {
+  transition: 0.3s;
+  transition-property: background, color;
+  background: hsl(183deg, 100%, 15%);
+  text-align: center;
+  color: hsl(189deg, 41%, 97%);
+  padding: 10px 0;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.tip-calc__precents button:hover {
+  background: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}
+.tip-calc__precents button.active {
+  background: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}
+.tip-calc__precents input.active {
+  border: 3px solid hsl(172deg, 67%, 45%);
+}
+.tip-calc__two-column {
+  display: flex;
+  justify-content: space-between;
+}
+.tip-calc__output {
+  background: hsl(183deg, 100%, 15%);
+  border-radius: 15px;
+  padding: 25px;
+  display: grid;
+  grid-template: 20px auto 30px auto 30px auto/1fr;
+}
+.tip-calc__output .first {
+  grid-row: 2;
+}
+.tip-calc__output .second {
+  grid-row: 4;
+}
+.tip-calc__output .third {
+  grid-row: 6;
+}
+.tip-calc__output-titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.tip-calc__output-title {
+  color: hsl(185deg, 41%, 84%);
+}
+.tip-calc__output-small-text {
+  color: hsl(184deg, 14%, 56%);
+}
+.tip-calc__output-money {
+  color: hsl(172deg, 67%, 45%);
+  font-size: 32px;
+}
+.tip-calc__reset {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: hsl(183deg, 100%, 15%);
+  background: hsl(172deg, 67%, 45%);
+  padding: 12px 0 10px 0;
+  border-radius: 5px;
+  transition: 0.3s;
+  transition-property: background;
+}
+.tip-calc__reset:hover {
+  background: #9fe8df;
+}
+.tip-calc__reset.inactive {
+  background: #0d686d;
+}
+
+.attribution {
+  grid-row: 6;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 500px) {
+  .wrapper {
+    width: 920px;
+    margin: 0 auto;
+    grid-template: 2fr auto 1fr auto 3fr auto/1fr;
+  }
+  .margin-bottom-first-input {
+    margin-bottom: 45px;
+  }
+  .margin-bottom-third-input {
+    margin-bottom: 0px;
+  }
+  .tip-calc {
+    display: grid;
+    grid-template: 1fr/1fr 1fr;
+    padding: 32px;
+  }
+  .tip-calc__parameters {
+    padding: 16px;
+  }
+  .tip-calc__precents {
+    display: grid;
+    grid-template: 1fr 1fr/1fr 1fr 1fr;
+    gap: 14px 16px;
+    margin: 20px 0 45px 0;
+  }
+  .tip-calc__output {
+    padding: 40px;
+    grid-template: 20px auto 60px auto 1fr auto/1fr;
+  }
+  .tip-calc__output-money {
+    font-size: 48px;
+  }
+}

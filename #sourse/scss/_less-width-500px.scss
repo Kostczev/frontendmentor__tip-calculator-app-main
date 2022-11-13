@@ -1,0 +1,197 @@
+body {
+   background: $light-grayish-cyan;
+   font-family: 'Space Mono', monospace;
+   font-weight: 700;
+   font-size: 16px;
+   color: $dark-grayish-cyan;
+}
+
+.wrapper {
+   min-height: 100%;
+   display: grid;
+   grid-template: 1fr auto 1fr auto 1fr auto / 1fr;
+}
+
+.title {
+   text-align: center;
+   grid-row: 2;
+   font-size: 24px;
+   text-transform: uppercase;
+   letter-spacing: 10px;
+}
+
+.margin-bottom-first-input {
+   margin-bottom: 35px;
+}
+.margin-bottom-third-input {
+   margin-bottom: 24px;
+}
+
+.tip-calc {
+   grid-row: 4;
+   background: $white;
+   border-radius: 20px;
+   padding: 24px;
+   
+   gap: 32px;
+   box-shadow: 0 10px 20px 0 #afd8da;
+
+   &__parameters {
+      padding: 8px;
+   }
+
+   &__title {
+      margin-bottom: 10px;
+   }
+
+   &__input {
+      transition: .3s;
+      transition-property: border-color;
+
+      background: $very-light-grayish-cyan;
+      border: 3px solid $very-light-grayish-cyan;
+      width: 100%;
+      padding: 7px 12px;
+      border-radius: 5px;
+      text-align: right; 
+      color: $very-dark-cyan; 
+      font-size: 24px;
+      font-weight: 700;
+      &::placeholder{
+         color: $grayish-cyan;
+      }
+      &:hover {
+         border: 3px solid $strong-cyan;
+      }
+      &:focus {
+         border: 3px solid $strong-cyan;
+      }
+      &.error {
+         border: 3px solid $red;
+      }
+   }
+   
+   &__error-title {
+      transition: .3s;
+      transition-property: opacity;
+      opacity: 0;
+      color: $red;
+      &.active {
+         opacity: 1;
+      }
+   }
+
+   &__input-with-img {
+      position: relative;
+      img {
+         position: absolute;
+         left: 20px;
+         bottom: 20px;
+         top: 20px;
+         height: 18px;
+      }
+   }
+
+   &__precents {
+      display: grid;
+      grid-template: 1fr 1fr 1fr / 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0 35px 0;
+      button {
+         transition: .3s;
+         transition-property: background, color;
+
+         background: $very-dark-cyan;
+         text-align: center;
+         color: $very-light-grayish-cyan; 
+         padding: 10px 0;
+         border-radius: 5px;
+         font-size: 24px;
+         font-weight: 700;
+
+         &:hover {
+            background: $strong-cyan;
+            color: $very-dark-cyan;
+         }
+         
+         &.active {
+            background: $strong-cyan;
+            color: $very-dark-cyan;
+         }
+      }
+      input {
+         &.active {
+            border: 3px solid $strong-cyan;
+         }
+      }
+   }
+
+   &__two-column {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__output {
+      background: $very-dark-cyan;
+      border-radius: 15px;
+      padding: 25px;
+
+      display: grid;
+      grid-template: 20px auto 30px auto 30px auto / 1fr;
+
+      .first {
+         grid-row: 2;
+      }
+      .second {
+         grid-row: 4;
+      }
+      .third {
+         grid-row: 6;
+      }
+   }
+
+   &__output-titles {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+   }
+
+   &__output-title {
+      color: $light-grayish-cyan;
+   }
+
+   &__output-small-text {
+      color: $grayish-cyan;
+   }
+
+   &__output-money {
+      color: $strong-cyan;
+      font-size: 32px;
+   }
+
+   &__reset {
+      font-size: 20px;
+      text-transform: uppercase;
+      color: $very-dark-cyan;
+      background: $strong-cyan;
+      padding: 12px 0 10px 0;
+      border-radius: 5px;
+
+      transition: .3s;
+      transition-property: background;
+
+      &:hover {
+         background: $light-strong-cyan;
+      }
+
+      &.inactive {
+         background: $dark-cyan;
+      }
+   }
+}
+
+.attribution {
+   grid-row: 6;
+   text-align: center;
+   margin-bottom: 5px;
+}
